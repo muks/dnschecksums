@@ -230,7 +230,7 @@
           the size of the NONCE, ALGORITHM and NONCE-COPY fields. In
           query messages, it MUST be empty. In reply messages, it MUST
           contain the digest of the reply message which is computed as
-          described in <xref target="sec-format" />.</t>
+          described in <xref target="sec-computation" />.</t>
         </section>
         <section title="NONCE-COPY">
           <t>The NONCE-COPY field is represented as an unsigned 64-bit
