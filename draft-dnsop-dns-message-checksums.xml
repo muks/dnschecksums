@@ -114,8 +114,8 @@
       <t>Clients supporting DNS message checksums add an EDNS option to
       their queries, which declares their support for this feature.</t>
 
-      <t>The CHECKSUM EDNS option contains 3 fields: NONCE, ALGORITHM
-      and DIGEST. These fields are described in <xref
+      <t>The CHECKSUM EDNS option contains 4 fields: NONCE, ALGORITHM,
+      DIGEST, and NONCE-COPY. These fields are described in <xref
       target="sec-format" />.</t>
 
       <t>It is OPTIONAL for a client to add a CHECKSUM EDNS option to
