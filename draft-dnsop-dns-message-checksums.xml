@@ -170,7 +170,7 @@
     <section title="The CHECKSUM EDNS(0) option" anchor="sec-format">
 
       <t>CHECKSUM is an EDNS(0) <xref target="RFC6891" /> option that is
-      used to transmit a digest of a DNS message in replies. Its use
+      used to transmit a digest of a DNS message in replies. Its use is
       described in a previous section. Here, its syntax is provided.</t>
 
       <section title="Wire format">
