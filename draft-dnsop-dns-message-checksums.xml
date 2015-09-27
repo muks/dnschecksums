@@ -283,6 +283,10 @@
       attacks are made more difficult due to the presence of the NONCE
       field.</t>
 
+      <t>The CHECKSUM EDNS option cannot prevent some kinds of attack
+      such as response and NS blocking and NS pinning as described in
+      <xref target="Fragment-Poisonous"/>.</t>
+
     </section>
 
     <section title="IANA Considerations">
