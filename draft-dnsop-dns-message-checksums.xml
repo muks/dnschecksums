@@ -359,7 +359,8 @@
           <vspace/>
           Removed the NONCE-COPY field as it is no longer
           necessary. Doubled the size of the NONCE field to 128
-          bits. Fixed incorrect reference, language and grammar.
+          bits. Added sample checksum algorithms. Fixed incorrect
+          reference, language and grammar.
           </t>
 
         </list>
