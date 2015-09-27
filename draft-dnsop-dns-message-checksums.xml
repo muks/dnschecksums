@@ -279,6 +279,9 @@
       the NONCE field may be chosen similarly to provide ample security
       to verify a short-lived DNS message.</t>
 
+      <t>The NONCE field effectively extends the ID field <xref
+      target="RFC1035" /> in the DNS message header.</t>
+
       <t>As a side-effect of using checksums, resolver cache poisoning
       attacks are made more difficult due to the presence of the NONCE
       field.</t>
