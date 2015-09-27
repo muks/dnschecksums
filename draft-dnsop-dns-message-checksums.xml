@@ -114,20 +114,19 @@
       <t>Clients supporting DNS message checksums add an EDNS option to
       their queries, which declares their support for this feature.</t>
 
-      <t>The CHECKSUM EDNS option contains 4 fields: NONCE, ALGORITHM,
-      DIGEST, and NONCE-COPY. These fields are described in <xref
+      <t>The CHECKSUM EDNS option contains 3 fields: NONCE, ALGORITHM,
+      and DIGEST. These fields are described in <xref
       target="sec-format" />.</t>
 
       <t>It is OPTIONAL for a client to add a CHECKSUM EDNS option to
       DNS query messages. If it adds such an option, it MUST set the
-      NONCE field to a random 64-bit unsigned integer. The ALGORITHM
+      NONCE field to a random 128-bit unsigned integer. The ALGORITHM
       field MUST be set to 0 and the DIGEST field MUST be left
       empty. The NONCE field MUST be randomly generated (i.e., in no
       predictable sequence) for each query for which the client uses a
-      CHECKSUM EDNS option. The NONCE-COPY field MUST be set identical
-      to the value in the NONCE field. The client is expected to
-      remember the per-query NONCE field's value to be used in verifying
-      the reply to this query message.</t>
+      CHECKSUM EDNS option. The client is expected to remember the
+      per-query NONCE field's value to be used in verifying the reply to
+      this query message.</t>
 
       <t>A client MUST NOT send multiple DNS query messages with the
       NONCE set to a fixed unchanging value. Instead, it must not send
@@ -140,10 +139,9 @@
       over the DNS reply message as described in <xref
       target="sec-computation" /> and the ALGORITHM and DIGEST fields
       MUST be set using the resulting checksum as described in <xref
-      target="sec-format" />. The NONCE-COPY field MUST be set identical
-      to the value in the NONCE field. The server is at liberty to
-      choose any checksum algorithm it wants to. A list of algorithms is
-      given in <xref target="sec-algorithms" />.</t>
+      target="sec-format" />. The server is at liberty to choose any
+      checksum algorithm it wants to. A list of algorithms is given in
+      <xref target="sec-algorithms" />.</t>
 
       <t>When a client receives a reply message for which it sent a
       CHECKSUM EDNS option in the corresponding query, it SHOULD look
@@ -152,12 +150,11 @@
       as it chooses to.</t>
 
       <t>If a CHECKSUM EDNS option is present in the reply, the client
-      SHOULD first check and ensure that both the NONCE and NONCE-COPY
-      fields contain the same nonce value that was sent in the
-      corresponding query message. If the nonce is different in either
-      of these two fields, the reply message MUST be
-      discarded. Afterwards, the client SHOULD proceed to compute a
-      checksum over the reply message as described in <xref
+      SHOULD first check and ensure that the NONCE field contains the
+      same nonce value that was sent in the corresponding query
+      message. If the value in the NONCE field is different, the reply
+      message MUST be discarded. Afterwards, the client SHOULD proceed
+      to compute a checksum over the reply message as described in <xref
       target="sec-computation" /> using the checksum algorithm in the
       ALGORITHM field. It SHOULD then compare the checksum value with
       the value that was received in the DIGEST field for equality. If
@@ -188,7 +185,7 @@
 
           <c>NONCE</c>
           <c>unsigned integer</c>
-          <c>64 bits (8 octets)</c>
+          <c>128 bits (16 octets)</c>
 
           <c>ALGORITHM</c>
           <c>unsigned integer</c>
@@ -198,17 +195,13 @@
           <c>byte array</c>
           <c>Variable length</c>
 
-          <c>NONCE-COPY</c>
-          <c>unsigned integer</c>
-          <c>64 bits (8 octets)</c>
-
         </texttable>
 
       </section>
 
       <section title="Option fields">
         <section title="NONCE">
-          <t>The NONCE field is represented as an unsigned 64-bit
+          <t>The NONCE field is represented as an unsigned 128-bit
           integer in network byte order. It MUST be randomly computed
           for each query message which a client sends out, and is copied
           verbatim from the query to the corresponding reply DNS message
@@ -227,15 +220,10 @@
           present after the NONCE and ALGORITHM fields. Its size is
           implicitly computed from the value in the OPTION-LENGTH field
           <xref target="RFC6891" /> for the CHECKSUM EDNS option minus
-          the size of the NONCE, ALGORITHM and NONCE-COPY fields. In
-          query messages, it MUST be empty. In reply messages, it MUST
-          contain the digest of the reply message which is computed as
-          described in <xref target="sec-computation" />.</t>
-        </section>
-        <section title="NONCE-COPY">
-          <t>The NONCE-COPY field is represented as an unsigned 64-bit
-          integer in network byte order. Its value MUST be set to be
-          identical to the NONCE field.</t>
+          the size of the NONCE and ALGORITHM fields. In query messages,
+          it MUST be empty. In reply messages, it MUST contain the
+          digest of the reply message which is computed as described in
+          <xref target="sec-computation" />.</t>
         </section>
       </section>
       <section title="Presentation format">
@@ -246,27 +234,19 @@
 
     <section title="Checksum computation" anchor="sec-computation">
 
-      <t>The NONCE and NONCE-COPY fields are present on either side of
-      the DIGEST field on purpose, so that an IP-layer PDU fragment will
-      contain both the DIGEST (in full or part) and at least one of
-      NONCE or NONCE-COPY fields. Suitable checksum algorithms MUST be
-      chosen so that the DIGEST field is not so large that this property
-      is violated.</t>
-
       <t>To generate the checksum digest to be placed in the DIGEST
       field, first the entire DNS message must be prepared (rendered)
       along with the CHECKSUM option embedded in it to the point that it
       is ready to be sent out on the wire. In this CHECKSUM option,
       initially the DIGEST field must be filled with zero values and its
       size must be reserved equal to the size expected for the digest
-      from the checksum algorithm intended to be used. The NONCE and
-      NONCE-COPY fields MUST be set to the value of the nonce from the
-      query DNS message. The ALGORITHM field MUST be set to the checksum
-      algorithm intended to be used. After this, the whole message
-      contents (from the start of the DNS message header onwards) must
-      be input to the checksum algorithm and the calculated checksum
-      must be patched into the DIGEST field, space for which was
-      reserved before.</t>
+      from the checksum algorithm intended to be used. The NONCE field
+      MUST be set to the value of the nonce from the query DNS
+      message. The ALGORITHM field MUST be set to the checksum algorithm
+      intended to be used. After this, the whole message contents (from
+      the start of the DNS message header onwards) must be input to the
+      checksum algorithm and the calculated checksum must be patched
+      into the DIGEST field, space for which was reserved before.</t>
 
       <t>To verify the checksum digest from a DNS message that was
       received, first the DIGEST field is copied to a temporary location
@@ -345,6 +325,14 @@
           draft-muks-dns-message-checksums-00
           <vspace/>
           Initial draft.
+          </t>
+
+          <t>
+          draft-muks-dns-message-checksums-01
+          <vspace/>
+          Removed the NONCE-COPY field as it is no longer
+          necessary. Doubled the size of the NONCE field to 128
+          bits. Fixed incorrect reference, language and grammar.
           </t>
 
         </list>
