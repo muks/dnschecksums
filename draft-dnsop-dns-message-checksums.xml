@@ -317,8 +317,31 @@
     </references>
 
     <section title="Checksum algorithms" anchor="sec-algorithms">
-      <t>TBD. This section will list checksum algorithms in a later
-      version of the draft, after discussion.</t>
+
+      <t>The ALGORITHM field identifies the checksum algorithm that is
+      used to compute the checksum digest for a DNS message. Fast
+      checksum algorithms which are able to provide ample security to
+      verify a short-lived DNS message are sufficient.</t>
+
+      <t>The following table lists the currently defined checksum
+      algorithm types.</t>
+
+        <texttable>
+
+          <ttcol>Value</ttcol>
+          <ttcol>Type</ttcol>
+          <ttcol>Status, Remarks</ttcol>
+
+          <c>0</c>
+          <c>EMPTY</c>
+          <c>Empty digest</c>
+
+          <c>1</c>
+          <c>SHA-1</c>
+          <c>Mandatory</c>
+
+        </texttable>
+
     </section>
 
     <section title="Change History (to be removed before publication)">
