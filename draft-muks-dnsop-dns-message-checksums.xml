@@ -39,7 +39,7 @@
 <!-- end of list of popular I-D processing instructions -->
 <?rfc comments="no" ?>
 <?rfc inline="yes" ?>
-<rfc category="exp" docName="draft-muks-dns-message-checksums-00" ipr="trust200902">
+<rfc category="exp" docName="draft-muks-dnsop-dns-message-checksums-00" ipr="trust200902">
 
   <front>
 
@@ -299,7 +299,8 @@
     </section>
 
     <section title="Acknowledgements">
-      <t>TBD.</t>
+      <t>Thanks to Tomek Mrugalski for offering tips on draft naming and
+      upload process.</t>
     </section>
 
   </middle>
@@ -352,18 +353,12 @@
         <list style="symbols">
 
           <t>
-          draft-muks-dns-message-checksums-00
+          draft-muks-dnsop-dns-message-checksums-00
           <vspace/>
-          Initial draft.
-          </t>
-
-          <t>
-          draft-muks-dns-message-checksums-01
-          <vspace/>
-          Removed the NONCE-COPY field as it is no longer
-          necessary. Doubled the size of the NONCE field to 128
-          bits. Added sample checksum algorithms. Fixed incorrect
-          reference, language and grammar.
+          Initial draft (renamed version). Removed the NONCE-COPY field
+          as it is no longer necessary. Doubled the size of the NONCE
+          field to 128 bits. Added sample checksum algorithms. Fixed
+          incorrect reference, language and grammar.
           </t>
 
         </list>
