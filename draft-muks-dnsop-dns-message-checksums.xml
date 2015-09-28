@@ -307,9 +307,11 @@
 
   <back>
 
-    <references title="References">
+    <references title="Normative references">
       &RFC1035; &RFC2119; &RFC5452; &RFC6891;
+    </references>
 
+    <references title="Informative references">
       <reference anchor="Fragment-Poisonous">
         <front>
           <title>Fragmentation Considered Poisonous</title>
