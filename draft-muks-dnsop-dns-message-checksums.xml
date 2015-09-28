@@ -260,7 +260,7 @@
 
     </section>
 
-    <section title="Effects of using checksums" anchor="sec-effects">
+    <section title="Security considerations" anchor="sec-security">
 
       <t>The methods in this memo are designed to thwart off-path
       spoofing attacks which may lead to cache-poisoning, including the
