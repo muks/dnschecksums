@@ -286,6 +286,12 @@
       attacks are made more difficult due to the presence of the NONCE
       field.</t>
 
+      <t>There is a risk of downgrade attack when the IP fragment
+      containing the CHECKSUM EDNS option is spoofed, deleting this
+      option. This risk would exist until the presence of the CHECKSUM
+      option in replies is made mandatory when a corresponding option is
+      sent in the query.</t>
+
       <t>The CHECKSUM EDNS option cannot prevent some kinds of attack
       such as response and NS blocking and NS pinning as described in
       <xref target="Fragment-Poisonous"/>.</t>
