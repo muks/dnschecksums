@@ -216,14 +216,15 @@
           target="sec-algorithms" />.</t>
         </section>
         <section title="DIGEST">
-          <t>The DIGEST field is represented as a sequence of octets
-          present after the NONCE and ALGORITHM fields. Its size is
-          implicitly computed from the value in the OPTION-LENGTH field
-          <xref target="RFC6891" /> for the CHECKSUM EDNS option minus
-          the size of the NONCE and ALGORITHM fields. In query messages,
-          it MUST be empty. In reply messages, it MUST contain the
-          digest of the reply message which is computed as described in
-          <xref target="sec-computation" />.</t>
+          <t>The DIGEST field is represented as a variable-length
+          sequence of octets present after the NONCE and ALGORITHM
+          fields. Its size is implicitly computed from the value in the
+          OPTION-LENGTH field <xref target="RFC6891" /> for the CHECKSUM
+          EDNS option minus the size of the NONCE and ALGORITHM
+          fields. In query messages, it MUST be empty. In reply
+          messages, it MUST contain the digest of the reply message
+          which is computed as described in <xref
+          target="sec-computation" />.</t>
         </section>
       </section>
       <section title="Presentation format">
@@ -343,14 +344,17 @@
 
           <ttcol>Value</ttcol>
           <ttcol>Type</ttcol>
+          <ttcol>Length</ttcol>
           <ttcol>Status, Remarks</ttcol>
 
           <c>0</c>
           <c>EMPTY</c>
+          <c>0 octets</c>
           <c>Empty digest</c>
 
           <c>1</c>
           <c>SHA-1</c>
+          <c>20 octets</c>
           <c>Mandatory</c>
 
         </texttable>
