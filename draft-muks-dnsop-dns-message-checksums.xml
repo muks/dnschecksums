@@ -121,13 +121,13 @@
 
       <t>It is OPTIONAL for a client to add a CHECKSUM EDNS option to
       DNS query messages. If it adds such an option, it MUST set the
-      NONCE field to a random 128-bit unsigned integer. The ALGORITHM
-      field MUST be set to 0 and the DIGEST field MUST be left
-      empty. The NONCE field MUST be randomly generated (i.e., in no
-      predictable sequence) for each query for which the client uses a
-      CHECKSUM EDNS option. The client is expected to remember the
-      per-query NONCE field's value to be used in verifying the reply to
-      this query message.</t>
+      NONCE field to a random value. The ALGORITHM field MUST be set to
+      0 and the DIGEST field MUST be left empty. The entire NONCE field
+      MUST be randomly generated (i.e., in no predictable sequence and
+      the random value must fill all bits of the field) for each query
+      for which the client uses a CHECKSUM EDNS option. The client is
+      expected to remember the per-query NONCE field's value to be used
+      in verifying the reply to this query message.</t>
 
       <t>A client MUST NOT send multiple DNS query messages with the
       NONCE set to a fixed unchanging value. Instead, it must not send
