@@ -139,7 +139,7 @@
       message to the corresponding reply message. A checksum is computed
       over the DNS reply message as described in <xref
       target="sec-computation" /> and the ALGORITHM and DIGEST fields
-      MUST be set using the resulting checksum as described in <xref
+      MUST be set using the resulting checksum as given in <xref
       target="sec-format" />. The server is at liberty to choose any
       checksum algorithm it wants to. A list of algorithms is given in
       <xref target="sec-algorithms" />.</t>
