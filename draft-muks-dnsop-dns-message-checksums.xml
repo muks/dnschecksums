@@ -380,7 +380,7 @@
 
         <texttable>
 
-          <ttcol>Value</ttcol>
+          <ttcol>Value(s)</ttcol>
           <ttcol>Type</ttcol>
           <ttcol>Length</ttcol>
           <ttcol>Status, Remarks</ttcol>
@@ -394,6 +394,21 @@
           <c>SHA-1</c>
           <c>20 octets</c>
           <c>Mandatory</c>
+
+          <c>2-239</c>
+          <c></c>
+          <c></c>
+          <c>Unassigned</c>
+
+          <c>240-254</c>
+          <c></c>
+          <c></c>
+          <c>Reserved for experimental use</c>
+
+          <c>255</c>
+          <c></c>
+          <c></c>
+          <c>Reserved</c>
 
         </texttable>
 
