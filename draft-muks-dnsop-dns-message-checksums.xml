@@ -306,7 +306,9 @@
       option. This risk would exist until the presence of the CHECKSUM
       option in replies is made mandatory when a corresponding option is
       sent in the query. This can be made so right from the start, or
-      after an adoption period.</t>
+      after an adoption period. At that time, it may be stated that a
+      client that does not receive a CHECKSUM EDNS option in a reply
+      would discard the reply message and retry the query using TCP.</t>
 
       <t>The CHECKSUM EDNS option cannot prevent some kinds of attack
       such as response and NS blocking and NS pinning as described in
