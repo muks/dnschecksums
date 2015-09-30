@@ -144,11 +144,25 @@
       checksum algorithm it wants to. A list of algorithms is given in
       <xref target="sec-algorithms" />.</t>
 
+      <t>If a server receives a query containing a CHECKSUM EDNS option
+      with an ALGORITHM field that is not set to 0, it MUST ignore this
+      option and process the request as if there were no CHECKSUM EDNS
+      option in the query.</t>
+
       <t>When a client receives a reply message for which it sent a
       CHECKSUM EDNS option in the corresponding query, it SHOULD look
-      for the presence of the CHECKSUM EDNS option in the reply. The
-      client may handle the lack of a CHECKSUM EDNS option in the reply
-      as it chooses to.</t>
+      for the presence of the CHECKSUM EDNS option in the reply.</t>
+
+      <t>The client may handle the lack of a CHECKSUM EDNS option in the
+      reply as it chooses to. It is currently not specified, but may be
+      updated in the future.</t>
+
+      <t>If a client receives a reply containing a CHECKSUM EDNS option
+      with an unknown ALGORITHM value, it MUST ignore this option and
+      handle the reply as if there were no CHECKSUM EDNS option in
+      it. From the previous paragraph, it follows that the client
+      behavior in this case is also currently not specified, but may be
+      updated in the future.</t>
 
       <t>If a CHECKSUM EDNS option is present in the reply, the client
       SHOULD first check and ensure that the NONCE field contains the
