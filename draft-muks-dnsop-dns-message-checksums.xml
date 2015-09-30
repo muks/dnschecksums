@@ -190,7 +190,7 @@
 
           <c>ALGORITHM</c>
           <c>unsigned integer</c>
-          <c>16 bits (2 octets)</c>
+          <c>8 bits (1 octet)</c>
 
           <c>DIGEST</c>
           <c>byte array</c>
@@ -209,7 +209,7 @@
           by the server.</t>
         </section>
         <section title="ALGORITHM">
-          <t>The ALGORITHM field is represented as an unsigned 16-bit
+          <t>The ALGORITHM field is represented as an unsigned 8-bit
           integer in network byte order. In query messages, it MUST be
           set to 0. In reply messages, it MUST contain the numeric value
           of the algorithm used to compute the DIGEST field. A list of
@@ -318,7 +318,7 @@
 
       </texttable>
 
-      <t>The CHECKSUM EDNS(0) option also defines a 16-bit ALGORITHM
+      <t>The CHECKSUM EDNS(0) option also defines an 8-bit ALGORITHM
       field, for which IANA is to create and maintain a new sub-registry
       entitled "DNS message checksum algorithms" under the CHECKSUM EDNS
       option. Initial values for the DNS message checksum algorithms
