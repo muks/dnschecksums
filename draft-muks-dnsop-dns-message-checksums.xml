@@ -313,8 +313,8 @@
       Tony Finch, Paul Hoffman, Evan Hunt, Paul Vixie, and Paul Wouters
       reviewed drafts and sent in comments and opinions. Mark Andrews
       mentioned an alternate method at the same time (on an internal
-      list) to address spoofing issues that provided further support to
-      the idea that CHECKSUM was worth pursuing.</t>
+      mailing list) to address spoofing issues that provided further
+      support to the idea that CHECKSUM was worth pursuing.</t>
     </section>
 
   </middle>
