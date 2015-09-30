@@ -312,20 +312,25 @@
 
         <ttcol>Value</ttcol>
         <ttcol>Name</ttcol>
+        <ttcol>Status</ttcol>
+        <ttcol>Reference</ttcol>
 
         <c>TBD</c>
         <c>CHECKSUM</c>
+        <c>TBD</c>
+        <c>[draft-muks-dnsop-dns-message-checksums]</c>
 
       </texttable>
 
       <t>The CHECKSUM EDNS(0) option also defines an 8-bit ALGORITHM
       field, for which IANA is to create and maintain a new sub-registry
-      entitled "DNS message checksum algorithms" under the CHECKSUM EDNS
-      option. Initial values for the DNS message checksum algorithms
-      registry are given in <xref target="sec-algorithms" />; future
-      assignments are to be made through Expert Review as in BCP 26
-      <xref target="RFC5226" />. Assignments consist of a DNS message
-      checksum algorithm name and its associated value.</t>
+      entitled "DNS message checksum algorithms" under the Domain Name
+      System (DNS) Parameters. Initial values for the DNS message
+      checksum algorithms registry are given in <xref
+      target="sec-algorithms" />; future assignments are to be made
+      through Expert Review as in BCP 26 <xref target="RFC5226"
+      />. Assignments consist of a DNS message checksum algorithm name
+      and its associated value.</t>
     </section>
 
     <section title="Acknowledgements">
