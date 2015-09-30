@@ -396,7 +396,7 @@
         <texttable>
 
           <ttcol>Value(s)</ttcol>
-          <ttcol>Type</ttcol>
+          <ttcol>Name</ttcol>
           <ttcol>Length</ttcol>
           <ttcol>Status, Remarks</ttcol>
 
