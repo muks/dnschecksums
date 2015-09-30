@@ -284,7 +284,8 @@
 
       <t>The CHECKSUM EDNS option is not designed to offer any
       protection against on-path attackers. Very little can be done
-      without using strong cryptographic methods for this case.</t>
+      without using shared-secret or public key cryptography for this
+      case.</t>
 
       <t>Checksum computation may increase resource usage on servers and
       clients. It is thus desirable to use fast checksum algorithms that
