@@ -6,6 +6,7 @@
      There has to be one entity for each item to be referenced.
      An alternate method (rfc include) is described in the references. -->
 
+<!ENTITY RFC5226 SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5226.xml">
 <!ENTITY RFC1035 SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.1035.xml">
 <!ENTITY RFC2119 SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml">
 <!ENTITY RFC5452 SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5452.xml">
@@ -300,10 +301,31 @@
 
     </section>
 
-    <section title="IANA Considerations">
-      <t>The CHECKSUM EDNS(0) option requires an option code to be
-      assigned for it. Checksum algorithms in <xref
-      target="sec-algorithms" /> need to be registered as well.</t>
+    <section title="IANA considerations">
+      <t>This document defines a new EDNS(0) option, entitled CHECKSUM
+      (see <xref target="sec-format" />), assigned a value of [TBD] from
+      the DNS EDNS0 Option Codes (OPT) space [to be removed upon
+      publication:
+      https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-11].</t>
+
+      <texttable>
+
+        <ttcol>Value</ttcol>
+        <ttcol>Name</ttcol>
+
+        <c>TBD</c>
+        <c>CHECKSUM</c>
+
+      </texttable>
+
+      <t>The CHECKSUM EDNS(0) option also defines a 16-bit ALGORITHM
+      field, for which IANA is to create and maintain a new sub-registry
+      entitled "DNS message checksum algorithms" under the CHECKSUM EDNS
+      option. Initial values for the DNS message checksum algorithms
+      registry are given in <xref target="sec-algorithms" />; future
+      assignments are to be made through Expert Review as in BCP 26
+      <xref target="RFC5226" />. Assignments consist of a DNS message
+      checksum algorithm name and its associated value.</t>
     </section>
 
     <section title="Acknowledgements">
@@ -322,10 +344,15 @@
   <back>
 
     <references title="Normative references">
-      &RFC1035; &RFC2119; &RFC5452; &RFC6891;
+      &RFC1035;
+      &RFC2119;
+      &RFC5452;
+      &RFC6891;
     </references>
 
     <references title="Informative references">
+      &RFC5226;
+
       <reference anchor="Fragment-Poisonous">
         <front>
           <title>Fragmentation Considered Poisonous</title>
