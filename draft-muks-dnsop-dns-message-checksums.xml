@@ -287,9 +287,8 @@
       without using strong cryptographic methods for this case.</t>
 
       <t>Checksum computation may increase resource usage on servers and
-      clients. It is thus desirable to use fast checksum algorithms
-      which provide ample security to verify a short-lived DNS
-      message.</t>
+      clients. It is thus desirable to use fast checksum algorithms that
+      meet the requirements of <xref target="sec-algorithms" />.</t>
 
       <t>The entropy source used for generating random values for use in
       the NONCE field may be chosen similarly to provide ample security
@@ -386,12 +385,14 @@
 
       <t>The ALGORITHM field as specified in <xref target="sec-format"
       /> identifies the checksum algorithm that is used to compute the
-      checksum digest for a DNS message. Fast checksum algorithms which
-      are able to provide ample security to verify a short-lived DNS
-      message are sufficient.</t>
+      checksum digest for a DNS message.</t>
 
       <t>The following table lists the currently defined checksum
-      algorithm types.</t>
+      algorithm types. Candidate checksum algorithms that are chosen for
+      inclusion in this list MUST be one-way cryptographic hash
+      functions that may be used by a client, to securely verify a
+      short-lived DNS message with a maximum message size constraint of
+      64 KiB.</t>
 
         <texttable>
 
