@@ -384,10 +384,11 @@
 
     <section title="Checksum algorithms" anchor="sec-algorithms">
 
-      <t>The ALGORITHM field identifies the checksum algorithm that is
-      used to compute the checksum digest for a DNS message. Fast
-      checksum algorithms which are able to provide ample security to
-      verify a short-lived DNS message are sufficient.</t>
+      <t>The ALGORITHM field as specified in <xref target="sec-format"
+      /> identifies the checksum algorithm that is used to compute the
+      checksum digest for a DNS message. Fast checksum algorithms which
+      are able to provide ample security to verify a short-lived DNS
+      message are sufficient.</t>
 
       <t>The following table lists the currently defined checksum
       algorithm types.</t>
