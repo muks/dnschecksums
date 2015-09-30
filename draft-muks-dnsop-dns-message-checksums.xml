@@ -393,7 +393,7 @@
       <t>The following table lists the currently defined checksum
       algorithm types. Candidate checksum algorithms that are chosen for
       inclusion in this list MUST be one-way cryptographic hash
-      functions that may be used by a client, to securely verify a
+      functions that may be used by a client to securely verify a
       short-lived DNS message with a maximum message size constraint of
       64 KiB.</t>
 
