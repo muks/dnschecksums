@@ -87,7 +87,7 @@
       datagrams are fragmented by the sender only.</t>
 
       <t>IP-layer fragmentation for large DNS response datagrams
-      introduce risk of cache poisoning by off-path attackers <xref
+      introduces risk of cache poisoning by off-path attackers <xref
       target="Fragment-Poisonous"/> in which an attacker can circumvent
       some defense mechanisms like source port and query ID
       randomization <xref target="RFC5452"/>.</t>
