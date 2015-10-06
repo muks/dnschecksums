@@ -88,8 +88,8 @@
 
       <t>IP-layer fragmentation for large DNS response datagrams
       introduce risk of cache poisoning by off-path attackers <xref
-      target="Fragment-Poisonous"/> in which an attacker can
-      circumvent some defense mechanisms like port, IP, and query
+      target="Fragment-Poisonous"/> in which an attacker can circumvent
+      some defense mechanisms like source port and query ID
       randomization <xref target="RFC5452"/>.</t>
 
       <t>This memo introduces the concept of a DNS message checksum
