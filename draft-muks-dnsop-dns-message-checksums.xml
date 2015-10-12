@@ -30,7 +30,7 @@
 <!-- end of list of popular I-D processing instructions -->
 <?rfc comments="no" ?>
 <?rfc inline="yes" ?>
-<rfc category="exp" docName="draft-muks-dnsop-dns-message-checksums-00" ipr="trust200902">
+<rfc category="exp" docName="draft-muks-dnsop-dns-message-checksums-01" ipr="trust200902">
 
   <front>
 
@@ -427,6 +427,16 @@
     <section title="Change History (to be removed before publication)">
       <t>
         <list style="symbols">
+
+          <t>
+          draft-muks-dnsop-dns-message-checksums-01
+          <vspace/>
+          Reduced NONCE field to 8 bytes. Reduced ALGORITHM field to 1
+          byte. Added note about risk of downgrade attack. Expanded IANA
+          considerations section and algorithms appendix. Described
+          behaviors further. Added notes on picking a suitable checksum
+          algorithm. Updated cross references, language and grammar.
+          </t>
 
           <t>
           draft-muks-dnsop-dns-message-checksums-00
