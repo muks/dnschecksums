@@ -191,7 +191,7 @@
 
           <c>NONCE</c>
           <c>unsigned integer</c>
-          <c>128 bits (16 octets)</c>
+          <c>64 bits (8 octets)</c>
 
           <c>ALGORITHM</c>
           <c>unsigned integer</c>
@@ -207,7 +207,7 @@
 
       <section title="Option fields">
         <section title="NONCE">
-          <t>The NONCE field is represented as an unsigned 128-bit
+          <t>The NONCE field is represented as an unsigned 64-bit
           integer in network byte order. It MUST be randomly computed
           for each query message which a client sends out, and is copied
           verbatim from the query to the corresponding reply DNS message
