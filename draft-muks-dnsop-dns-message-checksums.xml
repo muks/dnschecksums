@@ -215,11 +215,10 @@
         </section>
         <section title="ALGORITHM">
           <t>The ALGORITHM field is represented as an unsigned 8-bit
-          integer in network byte order. In query messages, it MUST be
-          set to 0. In reply messages, it MUST contain the numeric value
-          of the algorithm used to compute the DIGEST field. A list of
-          algorithms and their values is given in <xref
-          target="sec-algorithms" />.</t>
+          integer. In query messages, it MUST be set to 0. In reply
+          messages, it MUST contain the numeric value of the algorithm
+          used to compute the DIGEST field. A list of algorithms and
+          their values is given in <xref target="sec-algorithms" />.</t>
         </section>
         <section title="DIGEST">
           <t>The DIGEST field is represented as a variable-length
