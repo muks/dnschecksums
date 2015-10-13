@@ -274,9 +274,11 @@
       specific case when IP-layer PDU fragmentation occurs.</t>
 
       <t>The CHECKSUM EDNS option is not designed to offer any
-      protection against on-path attackers. Very little can be done
-      without using shared-secret or public key cryptography for this
-      case.</t>
+      protection against on-path attackers. Using shared-secret or
+      public key cryptography, a limited set of on-path attack scenarios
+      such as message modifications can be addressed. It may be
+      impossible to avoid other on-path attacks such as network
+      disruptions.</t>
 
       <t>Checksum computation may increase resource usage on servers and
       clients. It is thus desirable to use fast checksum algorithms that
