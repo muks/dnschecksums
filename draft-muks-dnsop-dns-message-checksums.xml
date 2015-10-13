@@ -310,9 +310,9 @@
 
     <section title="IANA considerations">
       <t>This document defines a new EDNS(0) option, titled CHECKSUM
-      (see <xref target="sec-format" />), assigned a value of [TBD] from
-      the DNS EDNS0 Option Codes (OPT) space [to be removed upon
-      publication:
+      (see <xref target="sec-format" />), assigned a value of
+      &lt;TBD&gt; from the DNS EDNS0 Option Codes (OPT) space [to be
+      removed upon publication:
       https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-11].</t>
 
       <texttable>
