@@ -190,8 +190,8 @@
           <ttcol>Field size</ttcol>
 
           <c>NONCE</c>
-          <c>unsigned integer</c>
-          <c>64 bits (8 octets)</c>
+          <c>byte array</c>
+          <c>8 octets</c>
 
           <c>ALGORITHM</c>
           <c>unsigned integer</c>
@@ -207,11 +207,11 @@
 
       <section title="Option fields">
         <section title="NONCE">
-          <t>The NONCE field is represented as an unsigned 64-bit
-          integer in network byte order. It MUST be randomly computed
-          for each query message which a client sends out, and is copied
-          verbatim from the query to the corresponding reply DNS message
-          by the server.</t>
+          <t>The NONCE field is represented as a byte array that is 8
+          octets in size. It MUST be randomly computed for each query
+          message which a client sends out, and is copied verbatim from
+          the query to the corresponding reply DNS message by the
+          server.</t>
         </section>
         <section title="ALGORITHM">
           <t>The ALGORITHM field is represented as an unsigned 8-bit
