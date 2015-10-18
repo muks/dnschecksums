@@ -361,6 +361,7 @@
       <?rfc include="reference.RFC.2119.xml"?>
       <?rfc include="reference.RFC.5452.xml"?>
       <?rfc include="reference.RFC.6891.xml"?>
+      <?rfc include="reference.FIPS.180-1.1995.xml"?>
     </references>
 
     <references title="Informative references">
@@ -404,7 +405,7 @@
           <c>1</c>
           <c>SHA-1</c>
           <c>20 octets</c>
-          <c>Mandatory</c>
+          <c>Mandatory; <xref target="FIPS.180-1.1995" /></c>
 
           <c>2-239</c>
           <c></c>
