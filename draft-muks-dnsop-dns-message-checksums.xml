@@ -123,6 +123,9 @@
       NONCE set to a fixed unchanging value. Instead, it must not send
       the option at all.</t>
 
+      <t>A client MUST NOT add more than one CHECKSUM EDNS option to a
+      DNS query message.</t>
+
       <t>The server SHOULD add a CHECKSUM EDNS option in the reply
       message to a corresponding query that arrived with this option
       present. The NONCE field MUST be copied verbatim from the query
@@ -134,10 +137,16 @@
       checksum algorithm it wants to from the list of supported
       algorithms given in <xref target="sec-algorithms" />.</t>
 
+      <t>A server MUST NOT add more than one CHECKSUM EDNS option to a
+      DNS reply message.</t>
+
       <t>If a server receives a query containing a CHECKSUM EDNS option
       with an ALGORITHM field that is not set to 0, it MUST ignore this
       option and process the request as if there were no CHECKSUM EDNS
       option in the query.</t>
+
+      <t>If a server receives a query containing multiple CHECKSUM EDNS
+      options, it MUST reject the query with a FORMERR.</t>
 
       <t>When a client receives a reply message for which it sent a
       CHECKSUM EDNS option in the corresponding query, it SHOULD look
@@ -149,10 +158,17 @@
 
       <t>If a client receives a reply containing a CHECKSUM EDNS option
       with an unknown ALGORITHM value, it MUST ignore this option and
-      handle the reply as if there were no CHECKSUM EDNS option in
+      handle the reply as if there was no CHECKSUM EDNS option in
       it. From the previous paragraph, it follows that the client
       behavior in this case is also currently not specified, but may be
       updated in the future.</t>
+
+      <t>If a client receives a reply containing multiple CHECKSUM EDNS
+      options, it MUST ignore all CHECKSUM EDNS options and handle the
+      reply as if there was no CHECKSUM EDNS option in it. From the
+      previous paragraphs, it follows that the client behavior in this
+      case is also currently not specified, but may be updated in the
+      future.</t>
 
       <t>If a CHECKSUM EDNS option is present in the reply, the client
       SHOULD first check and ensure that the NONCE field contains the
