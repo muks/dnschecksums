@@ -30,7 +30,7 @@
 <!-- end of list of popular I-D processing instructions -->
 <?rfc comments="no" ?>
 <?rfc inline="yes" ?>
-<rfc category="exp" docName="draft-muks-dnsop-dns-message-checksums-01" ipr="trust200902">
+<rfc category="exp" docName="draft-muks-dnsop-dns-message-checksums-02" ipr="trust200902">
 
   <front>
 
@@ -461,6 +461,16 @@
     <section title="Change history (to be removed before publication)">
       <t>
         <list style="symbols">
+
+          <t>
+          draft-muks-dnsop-dns-message-checksums-02
+          <vspace/>
+          Elaborate further about on-path attack types. Remove leftover
+          comment about network byte order in the ALGORITHM field. Make
+          the NONCE field a byte array. Add SHA-256 algorithm and a
+          reference for SHA-1. Describe what to do with multiple
+          CHECKSUM options in a single message.
+          </t>
 
           <t>
           draft-muks-dnsop-dns-message-checksums-01
