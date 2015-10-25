@@ -377,7 +377,18 @@
       <?rfc include="reference.RFC.2119.xml"?>
       <?rfc include="reference.RFC.5452.xml"?>
       <?rfc include="reference.RFC.6891.xml"?>
-      <?rfc include="reference.FIPS.180-1.1995.xml"?>
+
+      <reference anchor="FIPS.180-4.2015" target="http://csrc.nist.gov/publications/fips/fips180-4/fips-180-4.pdf">
+        <front>
+          <title>Secure Hash Standard</title>
+          <author>
+            <organization>National Institute of Standards and Technology</organization>
+          </author>
+          <date month="August" year="2015" />
+        </front>
+        <seriesInfo name="FIPS" value="PUB 180-4" />
+      </reference>
+
     </references>
 
     <references title="Informative references">
@@ -421,9 +432,14 @@
           <c>1</c>
           <c>SHA-1</c>
           <c>20 octets</c>
-          <c>Mandatory; <xref target="FIPS.180-1.1995" /></c>
+          <c>Mandatory; <xref target="FIPS.180-4.2015" /></c>
 
-          <c>2-239</c>
+          <c>2</c>
+          <c>SHA-256</c>
+          <c>32 octets</c>
+          <c>Mandatory; <xref target="FIPS.180-4.2015" /></c>
+
+          <c>3-239</c>
           <c></c>
           <c></c>
           <c>Unassigned</c>
