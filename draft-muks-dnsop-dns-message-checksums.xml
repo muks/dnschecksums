@@ -430,9 +430,9 @@
           <c>Empty digest (query only)</c>
 
           <c>1</c>
-          <c>SHA-1</c>
-          <c>20 octets</c>
-          <c>Mandatory; <xref target="FIPS.180-4.2015" /></c>
+          <c></c>
+          <c></c>
+          <c>Reserved</c>
 
           <c>2</c>
           <c>SHA-256</c>
@@ -467,9 +467,9 @@
           <vspace/>
           Elaborate further about on-path attack types. Remove leftover
           comment about network byte order in the ALGORITHM field. Make
-          the NONCE field a byte array. Add SHA-256 algorithm and a
-          reference for SHA-1. Describe what to do with multiple
-          CHECKSUM options in a single message.
+          the NONCE field a byte array. Add SHA-256 algorithm and remove
+          SHA-1. Describe what to do with multiple CHECKSUM options in a
+          single message.
           </t>
 
           <t>
