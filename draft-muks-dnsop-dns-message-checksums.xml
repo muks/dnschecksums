@@ -361,11 +361,12 @@
       <t>Tomek Mrugalski offered tips on draft naming and upload
       process. Joe Abley reviewed the draft and pointed out some nits
       that were not detected automatically. Ray Bellis, Robert Edmonds,
-      Tony Finch, Paul Hoffman, Evan Hunt, Paul Vixie, and Paul Wouters
-      reviewed drafts and sent in comments and opinions. Mark Andrews
-      mentioned an alternate method at the same time (on an internal
-      mailing list) to address spoofing issues that provided further
-      support to the idea that CHECKSUM was worth pursuing.</t>
+      Tony Finch, Paul Hoffman, Evan Hunt, Jinmei Tatuya, Paul Vixie,
+      and Paul Wouters reviewed drafts and sent in comments and
+      opinions. Mark Andrews mentioned an alternate method at the same
+      time (on an internal mailing list) to address spoofing issues that
+      provided further support to the idea that CHECKSUM was worth
+      pursuing.</t>
     </section>
 
   </middle>
